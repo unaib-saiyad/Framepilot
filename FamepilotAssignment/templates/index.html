@@ -20,7 +20,6 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -41,7 +40,10 @@
                 <button class="btn btn-danger my-2 my-sm-0" type="submit">logout</button>
             </form>
             {% else %}
+            <form>
+                {% csrf_token %}
                 <a class="btn btn-success my-2 my-sm-0" href="{% url 'my_app:login' %}">Login</a>
+            </form>
             {% endif %}
         </div>
     </nav>
